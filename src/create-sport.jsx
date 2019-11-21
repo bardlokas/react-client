@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from 'react';
 import { Row, Col, Input, Button } from 'reactstrap';
 
-function Sport() {
+function CreateSport({addSportToList}) {
   const [sport, setSport] = useState({name: ""});
 
-  function updateName(event) {
+  function updateName(value) {
     const updatedSport = {...sport};
-    updatedSport.name = event.target.value;
+    updatedSport.name = value;
     setSport(updatedSport);
   }
+
   function saveSport() {
     fetch("https://konkurranseapi.azurewebsites.net/api/sport", {
       method: 'POST',
@@ -18,14 +19,17 @@ function Sport() {
       body: JSON.stringify(sport) 
     })
     .then(response => response.json())
-    .then(json => console.log(json))
+    .then(json => {
+      addSportToList(json);
+      updateName("");
+    })
   }
 
   return (
     <div>
       <Row>   
         <Col>
-          <Input value={sport.name} onChange={name => updateName(name)}></Input></Col>
+          <Input value={sport.name} onChange={event => updateName(event.target.value)}></Input></Col>
         <Col>
           <Button onClick={() => saveSport()}>Save</Button>
         </Col>
@@ -34,4 +38,4 @@ function Sport() {
   );
 }
 
-export default Sport;
+export default CreateSport;
