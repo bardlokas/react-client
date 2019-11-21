@@ -10,7 +10,7 @@ function Main() {
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/leages" component={Leagues} />
+        <Route path="/leagues" component={Leagues} />
         <Route path="/teams" component={Teams} />
         <Route path="/sports" component={Sports} />
       </Switch>
