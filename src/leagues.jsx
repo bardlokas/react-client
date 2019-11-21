@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import { Row, Col } from 'reactstrap';
+import CreateLeagueForm from './Components/CreateLeagueForm';
 
 function Leages() {
   const [leagues, setLeages] = useState(null);
@@ -12,6 +13,9 @@ function Leages() {
 
   return (
     <div>
+
+      <CreateLeagueForm/>
+      
       <Row>
         <Col>Name</Col>
       </Row>
