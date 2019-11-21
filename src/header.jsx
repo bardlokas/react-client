@@ -9,8 +9,9 @@ function Header() {
         <Navbar.Brand>Norconsult Workshop</Navbar.Brand>
         <Nav className="mr-auto">
             <Link to="/">Home</Link> 
-            <Link to="/about">About</Link>
-            <Link to="/todos">Todos</Link>
+            <Link to="/leagues">Leagues</Link>
+            <Link to="/teams">Teams</Link>
+            <Link to="/sports">Sports</Link>
         </Nav>
       </Navbar>
     </div>

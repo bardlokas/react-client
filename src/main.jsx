@@ -1,16 +1,18 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import About from "./about";
+import Leagues from "./leagues";
+import Teams from "./teams";
 import Home from "./home";
-import Todos from "./todos";
+import Sports from "./sports";
 
 function Main() {
   return (
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/todos" component={Todos} />
+        <Route path="/leages" component={Leagues} />
+        <Route path="/teams" component={Teams} />
+        <Route path="/sports" component={Sports} />
       </Switch>
     </div>
   );
