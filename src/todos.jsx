@@ -30,6 +30,7 @@ export default class Todos extends Component {
   }
 
   render() {
+    console.log('hei');
     const { data, isLoading } = this.state;
     if (isLoading) {
       return <p>Loading Todolist</p>;
